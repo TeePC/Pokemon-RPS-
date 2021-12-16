@@ -71,7 +71,7 @@ function computerPlay() {
             } else if (playerScore < computerScore) {
                 alert('You Lose! You won '+ playerScore + ' Rounds ' + 'while the computer won ' + computerScore + ' rounds.')
             } else if (playerScore == computerScore) {
-                alert("It's a draw! You and the computer both won " + 'playerScore' + ' rounds.')
+                alert("It's a draw! You and the computer both won " + playerScore + ' rounds.')
             }
             else {
                 alert('uh oh, something went wrong..');
