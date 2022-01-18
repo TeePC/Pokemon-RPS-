@@ -3,6 +3,22 @@
  let playerScore = 0;
  let computerScore = 0;
 
+ function startHover(e) {
+    btn.classList.add("btnPlaying")
+    console.log(e);
+}
+
+function removeHover(e) {
+    
+    btn.classList.remove("btnPlaying");
+    
+    }
+
+    const btn = document.querySelector('.btn')
+btn.addEventListener("mouseenter", startHover);
+
+btn.addEventListener('transitionend', removeHover);
+
 
 
 // Create Random number from 1-3 (inclusive) if 1 Assign "Rock", 2 Assign "Paper" if 3 Assign Scissors
@@ -90,16 +106,7 @@ function resetScore() {
     
 
 }
-  //when game is over depending on score display one of these messages
+ 
 
-   // if (gameRound == 5) {
-       // if (playerScore > computerScore) {
-       //     alert('You win! You won '+ playerScore + ' Rounds ' + 'while the computer won, ' + computerScore + ' rounds.')
-      //  } else if (playerScore < computerScore) {
-      //      alert('You Lose! You won '+ playerScore + ' Rounds ' + 'while the computer won ' + computerScore + ' rounds.')
-    //   } else {
-      //      alert('uh oh, something went wrong..');
-        
-  //  }
+  
 
- //}

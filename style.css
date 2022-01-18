@@ -1,0 +1,144 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: 'Pokemon';
+    src: url(images/PokemonGb-RAeo.ttf);
+}
+body {
+    
+    
+    font-family: 'Pokemon';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0px;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.main-container {
+    border: 5px dashed black;
+    height:  80vh;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.title-image {
+    margin: 15px;
+    height: 50px;
+    width: 500px;
+}
+
+.main-text  {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    
+}
+
+.main-text P {
+    margin: 10px;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  .typed-out{
+    overflow: hidden;
+    border-right: .15em solid none ;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2s steps(30, end) forwards;
+  }
+
+  .typed-out2{
+    overflow: hidden;
+    border-right: .15em solid none;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2s steps(30, end) forwards;
+    animation-delay: 2.5s;
+  }
+  .typed-out3{
+    overflow: hidden;
+    border-right: .15em solid none;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2.5s steps(30, end) forwards;
+    animation-delay: 4.5s;
+  }
+
+  .typed-out4{
+    overflow: hidden;
+    border-right: .15em solid none ;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2s steps(30, end) forwards;
+    animation-delay: 6s;
+  }
+  
+
+  .c1 {
+      display: inline;
+  }
+
+.btn {
+    margin-top: 10rem;
+    width:300px;
+    text-align: center;
+    padding: 20px 100px;
+    background-color: rgb(255,204,3);
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 0px 0px 10px black;
+    color: blue;
+    border: 4px solid rgb(53,106,188);
+    animation-name: grow-shrink;
+    animation-duration: 1.00s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+    animation-direction: alternate;
+    animation-play-state: paused;
+    animation-iteration-count: infinite;
+
+    
+}
+
+.btn:hover {
+    animation-play-state: running;
+  }
+  
+
+@keyframes grow-shrink {
+    from {
+      transform: scale(1);
+    }
+    
+    to {
+      transform: scale(1.1);
+    }
+  }
+
+  
