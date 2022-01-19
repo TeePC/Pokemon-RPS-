@@ -25,7 +25,8 @@ a {
 
 
 .main-container {
-    border: 5px dashed black;
+    border: 5px solid black;
+    border-radius: 10px;
     height:  80vh;
     width: 80%;
     margin: auto;

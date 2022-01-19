@@ -3,21 +3,7 @@
  let playerScore = 0;
  let computerScore = 0;
 
- function startHover(e) {
-    btn.classList.add("btnPlaying")
-    console.log(e);
-}
-
-function removeHover(e) {
-    
-    btn.classList.remove("btnPlaying");
-    
-    }
-
-    const btn = document.querySelector('.btn')
-btn.addEventListener("mouseenter", startHover);
-
-btn.addEventListener('transitionend', removeHover);
+ 
 
 
 
