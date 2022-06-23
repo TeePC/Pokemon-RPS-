@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeMon RPS</title>
     <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
+<script type="text/javascript" src="loading-bar.js"></script>
+    
 </head>
 <body>
     <div class="main-container">
@@ -15,12 +18,13 @@
                     <p class="hp-title">CPU:</p>
                     <p class="lv99">Lv99</p>
                 </div>
-                <div class="hp-bar">
+                
                        
-                    <div class="currenthp">
-
+                    <div class= "ldBar" data-preset="energy" data-value="100"
+                    data-path="M0 200 L200 200 L200 1"  >
+                       
                     </div>
-                </div>
+                
                 <div class="playerhp-bar-bottom">
                     <p class="hp-text">HP:</p>
                     <p class="hp-points">5/5</p>
@@ -59,7 +63,7 @@
                 Choose an option!
             </div>
             <div class="options">
-                <button class="choices rock-btn">Rock</button>
+                <button class="choices rock-btn" id="rock" onclick="playRound(rock, computerSelection )">Rock</button>
                 <button class="choices paper-btn">Paper</button>
                 <button class="choices scissors-btn">Scissors</button>
             </div>
@@ -67,4 +71,5 @@
 
     </div>
 </body>
+<script src="script.js"></script>
 </html>

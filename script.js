@@ -1,4 +1,4 @@
- let playerSelection = "Rock";
+ let playerSelection = computerPlay();
  let computerSelection = computerPlay();   
  let playerScore = 0;
  let computerScore = 0;
@@ -25,7 +25,7 @@ function computerPlay() {
 
 //Assuming playerSelection is Rock, if computerPlay() generates Paper, alert you lose. ETC
  function playRound(playerSelection, computerSelection) {
- playerSelection = playerSelection.toLowerCase();
+ //playerSelection = playerSelection.toLowerCase();
   
  //console.log(playerScore);
  //console.log(computerScore);
@@ -93,6 +93,4 @@ function resetScore() {
 
 }
  
-
-  
-
+ const rockButton = document.getElementById("rock").addEventListener("Click", playRound("rock", computerSelection));
