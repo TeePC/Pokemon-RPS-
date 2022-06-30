@@ -178,7 +178,11 @@ body {
     }
 
 .bottom-row {
+<<<<<<< HEAD
     background-color: rgb(251,243,209);
+=======
+    background-color: rgb(176, 68, 68);
+>>>>>>> fd18f13d522f1a3965aaec44c5737cc74bc87f3b
     width: 100%;
     height: 9rem;
     display: flex;
@@ -191,11 +195,16 @@ body {
     align-items: center;
     border: 3px solid black;
     width: 55%;
+    background-color: rgb(251,243,209);
    
 }
 
 .options {
+<<<<<<< HEAD
     border: 3px solid white;
+=======
+    border: 3px solid black;
+>>>>>>> fd18f13d522f1a3965aaec44c5737cc74bc87f3b
     justify-self: flex-end;
     width: 45%;
     display: flex;
@@ -213,7 +222,38 @@ body {
 .rock-btn {
     background-color: rgb(208,151,2);
     color: white;
+    animation-name: rock-color-shift;
+
+animation-duration: 1.00s;
+
+animation-timing-function: ease-in-out;
+
+    animation-fill-mode: backwards;
+
+    animation-direction: alternate;
+
+    animation-play-state: paused;
+
+    animation-iteration-count: infinite;
+
+    
 }
+
+.rock-btn:hover {
+ 
+animation-play-state: running;
+
+
+}
+
+@keyframes  rock-color-shift {
+  
+    from {background-color: rgb(208,151,2); }
+    to { background-color: chocolate; }
+    
+    }
+    
+
 .paper-btn {
     background-color: limegreen;
     color: white;
@@ -224,3 +264,5 @@ body {
     color: white;
     
 }
+
+ 
