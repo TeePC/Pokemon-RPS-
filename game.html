@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeMon RPS</title>
     <link rel="stylesheet" href="game.css">
-    <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
-<script type="text/javascript" src="loading-bar.js"></script>
+    
+    
+
     
 </head>
 <body>
@@ -15,18 +16,22 @@
         <div class="top-row">
             <div class="player-hp-bar-container" id="cpu-hpbar">
                 <div class="playerhpbartop">
-                    <p class="hp-title">CPU:</p>
+                    <p class="hp-title">CPU</p>
                     <p class="lv99">Lv99</p>
                 </div>
-                
+                <div class="hp-bar">
                        
-                    <div class= "ldBar" data-preset="energy" data-value="100">
-                       
+                    <div class="currenthp" id="CPU_HP">
+
                     </div>
+                </div>
+                       
+                   
                 
                 <div class="playerhp-bar-bottom">
-                    <p class="hp-text">HP:</p>
-                    <p class="hp-points">5/5</p>
+                    <p class="hp-text">HP</p>
+                    <p id="cpu-percentage"> 100%</p>
+                    
                 </div>
             </div>
         </div>
@@ -36,39 +41,50 @@
             </div>
         </div>
         <div class="mid-row-bottom">
-            <div class="player-choice fadeindown" id="player-box">
+            <div class="player-choice " id="player-box">
 
             </div>
             <div class="player-hp-bar-container" id="player-hp-bar">
                 <div class="playerhpbartop">
-                    <p class="hp-title">You:</p>
+                    <p class="hp-title">You</p>
                     <p class="lv99">Lv99</p>
                 </div>
                     
-                    <div class="hp-bar">
+                    <div class="hp-bar" id="outerProgress">
                        
-                        <div class="currenthp">
+                        <div class="currenthp" id="player_HP">
 
                         </div>
                     </div>
                     <div class="playerhp-bar-bottom">
-                        <p class="hp-text">HP:</p>
-                        <p class="hp-points">5/5</p>
+                        <p class="hp-text">HP</p>
+                        <p id="player-percentage"> 100% </p>
+                        
                     </div>
             </div>
         </div>
         <div class="bottom-row">
             <div class="game-text">
-                Choose an option!
+                
+                <div id="place-text">
+                 <p>Chose an option!</p>
+                
+            </div>
+             
+                <br>
+               
             </div>
             <div class="options">
-                <button class="choices rock-btn" id="rock" onclick="playRound(rock, computerSelection )">Rock</button>
-                <button class="choices paper-btn">Paper</button>
-                <button class="choices scissors-btn">Scissors</button>
+                <button class="choices rock-btn" id="rock">Rock</button>
+                <button class="choices paper-btn" id="paper">Paper</button>
+                <button class="choices scissors-btn" id="scissors">Scissors</button>
             </div>
         </div>
 
     </div>
+
+    <audio id="my_audio" src="images/bg.mp3"></audio>
+    <audio id="low_hp_music" src="images/lowHP.mp3"></audio>
 </body>
-<script src="script.js"></script>
+<script src="script.js"> </script> 
 </html>
