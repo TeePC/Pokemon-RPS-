@@ -1,6 +1,6 @@
  let playerSelection;
  let computerSelection = computerPlay();   
-let cpu_Hp = 100;
+let cpu_HP = 100;
 let player_HP = 100;
 //window.onload = function() {
   // document.getElementById("my_audio").play();
@@ -69,13 +69,19 @@ scissorsBtnEl.removeEventListener('click', playRound_scissors);
          remover();
          delayText1();
          setTimeout(delayText2, 2000);
-         setTimeout(player_damage, 4000);
+          //setTimeout(player_damage, 4000);
          setTimeout(player_displayChoice_rock_lose, 2000);
          setTimeout(cpu_displayChoice_paper_win, 2000);
-         setTimeout(remover, 6000);
-         setTimeout(mainText, 7000);
-         setTimeout(activate_Buttons, 9000);
-
+         if ( player_HP === 20) {
+		
+            setTimeout(player_damage, 4000);
+            setTimeout(game_Over_lose, 7000);
+            } else {
+             setTimeout(player_damage, 4000);
+              setTimeout(remover, 6000);
+              setTimeout(mainText, 7000);
+              setTimeout(activate_Buttons, 9000);
+            }
          break;
      case "Scissors":
          
@@ -97,13 +103,20 @@ scissorsBtnEl.removeEventListener('click', playRound_scissors);
          remover();
          delayText_Scissors();
          setTimeout(delayText_Scissors2, 2000);
-         setTimeout(cpu_damage, 5000);
+         //setTimeout(cpu_damage, 5000);
          setTimeout(player_displayChoice_rock_win, 2000);
          setTimeout(cpu_displayChoice_scissors_lose, 2000);
-         setTimeout(remover, 6000);
-         setTimeout(mainText, 7000);
-         setTimeout(activate_Buttons, 9000);
-         
+         if ( cpu_HP === 20) {
+		
+            setTimeout(cpu_damage, 4000);
+            setTimeout(game_Over_win, 7000);
+            } else {
+              setTimeout(cpu_damage, 5000);
+              setTimeout(remover, 6000);
+              setTimeout(mainText, 7000);
+              setTimeout(activate_Buttons, 9000);
+            }
+      
      
 
 
@@ -225,11 +238,17 @@ switch(computerSelection) {
         setTimeout(delayText_Scissors2, 2000);
         setTimeout(player_displayChoice_paper_lose, 2000);
         setTimeout(cpu_displayChoice_scissors_win, 2000);
-        setTimeout(player_damage, 5000);
-        setTimeout(remover, 6000);
-        setTimeout(mainText, 7000);
-        setTimeout(activate_Buttons, 9000);
-    
+        //setTimeout(player_damage, 5000);
+        if ( player_HP === 20) {
+		
+         setTimeout(player_damage, 4000);
+         setTimeout(game_Over_lose, 7000);
+         } else {
+         setTimeout(player_damage, 4000);
+           setTimeout(remover, 6000);
+           setTimeout(mainText, 7000);
+           setTimeout(activate_Buttons, 9000);
+         }
 
 
         break;
@@ -254,12 +273,21 @@ switch(computerSelection) {
            setTimeout(delayText_rock2, 2000);
            setTimeout(player_displayChoice_paper_win, 2000);
         setTimeout(cpu_displayChoice_rock_lose, 2000);
-           setTimeout(cpu_damage, 5000);
-           
-           setTimeout(remover, 6000);
-           setTimeout(mainText, 7000);
-           setTimeout(activate_Buttons, 9000);
-        break;  
+           //setTimeout(cpu_damage, 5000);
+
+
+           if ( cpu_HP === 20) {
+		
+            setTimeout(cpu_damage, 4000);
+            setTimeout(game_Over_win, 7000);
+            } else {
+              setTimeout(cpu_damage, 4000);
+              setTimeout(remover, 6000);
+              setTimeout(mainText, 7000);
+              setTimeout(activate_Buttons, 9000);
+
+            break;}
+      
 }
 
 
@@ -291,7 +319,7 @@ switch(computerSelection) {
 
 
 function playRound_scissors() {
-   playerSelection = "Rock"; 
+   playerSelection = "scissors"; 
 playerSelection = playerSelection.toLowerCase();
 
  
@@ -331,22 +359,21 @@ switch(computerSelection) {
         setTimeout(delayText2, 2000);
         setTimeout(player_displayChoice_scissors_win, 2000);
         setTimeout(cpu_displayChoice_paper_lose, 2000);
+        //setTimeout(cpu_damage, 4000);
+        
+       
+	if ( cpu_HP === 20) {
+		
+		setTimeout(cpu_damage, 4000);
+		setTimeout(game_Over_win, 7000);
+		} else {
         setTimeout(cpu_damage, 4000);
-        if ( cpu_Hp === 0) {
-
-         setTimeout(game_Over_win, 7000);
-         
-        } else if ( player_HP === 0) {
-
-         setTimeout(game_Over_lose, 7000);
-
-        } else {
-
         setTimeout(remover, 6000);
         setTimeout(mainText, 7000);
         setTimeout(activate_Buttons, 9000);
+      }
 
-        }
+        
         break;
     case "Scissors":
         
@@ -399,10 +426,18 @@ switch(computerSelection) {
            setTimeout(delayText_rock2, 2000);
            setTimeout(player_displayChoice_scissors_lose, 2000);
            setTimeout(cpu_displayChoice_rock_win, 2000);
-           setTimeout(player_damage, 4000);
-           setTimeout(remover, 6000);
-           setTimeout(mainText, 7000);
-           setTimeout(activate_Buttons, 9000);
+           //setTimeout(player_damage, 4000);
+           
+	if ( player_HP === 20) {
+		
+		setTimeout(player_damage, 4000);
+		setTimeout(game_Over_lose, 7000);
+		} else {
+        setTimeout(player_damage, 4000); 
+        setTimeout(remover, 6000);
+        setTimeout(mainText, 7000);
+        setTimeout(activate_Buttons, 9000);
+      }
         break;  
 }
 
@@ -445,14 +480,14 @@ switch(computerSelection) {
         const cpu_percent = document.getElementById("cpu-percentage");
         let id = setInterval(frame, 50);
         function frame() {
-           if ( cpu_Hp <= 80) {
+           if ( cpu_HP <= 80) {
             clearInterval(id);
             i=0;
            } else {
-            cpu_Hp--;
-            elem.style.width = cpu_Hp + "%";
+            cpu_HP--;
+            elem.style.width = cpu_HP + "%";
             //elem.innerHTML = cpu_Hp;
-            cpu_percent.innerHTML = cpu_Hp + "%";
+            cpu_percent.innerHTML = cpu_HP + "%";
            }
         } 
     }
@@ -470,17 +505,17 @@ switch(computerSelection) {
         const cpu_percent = document.getElementById("cpu-percentage");
         let id = setInterval(frame, 50);
         function frame() {
-           if ( cpu_Hp<= 60) {
+           if ( cpu_HP<= 60) {
             clearInterval(id);
             i=0;
            } else {
-            cpu_Hp--;
-            elem.style.width = cpu_Hp + "%";
+            cpu_HP--;
+            elem.style.width = cpu_HP + "%";
             //elem.innerHTML = cpu_Hp;
             const list = elem.classList;
             list.add("changeColor");
             elem.style.backgroundColor = "yellow";
-            cpu_percent.innerHTML = cpu_Hp + "%";
+            cpu_percent.innerHTML = cpu_HP + "%";
            }
         } 
     }
@@ -495,17 +530,17 @@ switch(computerSelection) {
 
         let id = setInterval(frame, 50);
         function frame() {
-           if ( cpu_Hp<= 40) {
+           if ( cpu_HP<= 40) {
             clearInterval(id);
             i=0;
            } else {
-            cpu_Hp--;
-            elem.style.width = cpu_Hp + "%";
+            cpu_HP--;
+            elem.style.width = cpu_HP + "%";
             //elem.innerHTML = cpu_Hp;
             const list = elem.classList;
             list.add("changeColorRed");
             elem.style.backgroundColor = "red";
-            cpu_percent.innerHTML = cpu_Hp + "%";
+            cpu_percent.innerHTML = cpu_HP + "%";
            }
         } 
     }
@@ -520,17 +555,17 @@ switch(computerSelection) {
 
         let id = setInterval(frame, 50);
         function frame() {
-           if ( cpu_Hp<= 20) {
+           if ( cpu_HP<= 20) {
             clearInterval(id);
             i=0;
            } else {
-            cpu_Hp--;
-            elem.style.width = cpu_Hp + "%";
+            cpu_HP--;
+            elem.style.width = cpu_HP + "%";
             //elem.innerHTML = cpu_Hp;
             const list = elem.classList;
             list.add("changeColorRed");
             elem.style.backgroundColor = "red";
-            cpu_percent.innerHTML = cpu_Hp + "%";
+            cpu_percent.innerHTML = cpu_HP + "%";
            }
         } 
     }
@@ -545,17 +580,17 @@ switch(computerSelection) {
 
         let id = setInterval(frame, 50);
         function frame() {
-           if ( cpu_Hp<= 0) {
+           if ( cpu_HP<= 0) {
             clearInterval(id);
             i=0;
            } else {
-            cpu_Hp--;
-            elem.style.width = cpu_Hp + "%";
+            cpu_HP--;
+            elem.style.width = cpu_HP + "%";
            // elem.innerHTML = cpu_Hp;
             const list = elem.classList;
             list.add("changeColorRed");
             elem.style.backgroundColor = "red";
-            cpu_percent.innerHTML = cpu_Hp + "%";
+            cpu_percent.innerHTML = cpu_HP + "%";
            }
         } 
     }
@@ -565,22 +600,22 @@ switch(computerSelection) {
  function cpu_damage() {
 
 
-    if (cpu_Hp === 100) {
+    if (cpu_HP === 100) {
 		cpu_shrink()
 		
-	} else if (cpu_Hp === 80) {
+	} else if (cpu_HP === 80) {
 		cpu_shrink2()
 	
-	} else if (cpu_Hp === 60) {
+	} else if (cpu_HP === 60) {
 
 		cpu_shrink3()
 
-	} else if (cpu_Hp === 40) {
+	} else if (cpu_HP === 40) {
 
 
 		cpu_shrink4()
     
-	 } else if (cpu_Hp === 20) {
+	 } else if (cpu_HP === 20) {
 
         cpu_shrink5()
 
