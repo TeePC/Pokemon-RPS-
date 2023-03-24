@@ -2,9 +2,9 @@
  let computerSelection = computerPlay();   
 let cpu_HP = 100;
 let player_HP = 100;
-//window.onload = function() {
-  // document.getElementById("my_audio").play();
-//}
+window.onload = function() {
+   document.getElementById("my_audio").play();
+}
 
  
 
@@ -816,7 +816,10 @@ function mainText() {
       rockBtnEl.removeEventListener('click', playRound_rock);
       paperBtnEl.removeEventListener('click', playRound_paper);
       scissorsBtnEl.removeEventListener('click', playRound_scissors);
+      const stop_audio = document.getElementById("my_audio");
+        stop_audio.pause();
 
+      const play_win = document.getElementById("victory_music").play();
       remover();
       const first_p = document.createElement("p");
       const first_node = document.createTextNode("You Won!");
@@ -831,7 +834,10 @@ function mainText() {
       rockBtnEl.removeEventListener('click', playRound_rock);
       paperBtnEl.removeEventListener('click', playRound_paper);
       scissorsBtnEl.removeEventListener('click', playRound_scissors);
+      const stop_audio = document.getElementById("my_audio");
+        stop_audio.pause();
 
+      const play_lose = document.getElementById("defeat_music").play();
       remover();
       const first_p = document.createElement("p");
       const first_node = document.createTextNode("You Lost....");
